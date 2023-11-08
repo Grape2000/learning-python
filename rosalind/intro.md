@@ -15,4 +15,5 @@ Last I told python to print(c)
 
 
 INT3
-Sorry it´s to late, my brain is not braining anymore
+I splitted it two times, once 22:28 and once 97:103 
+then I printed both answers
