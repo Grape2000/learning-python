@@ -9,7 +9,9 @@ That I saved and submitted to Rosalind
 
 
 INT2
-I don´t know I am lost
+I made stirngs for a and b with the given numbers of the dataset. (a = 817 and b = 856)
+Then I entered a function for c = (a**2 + b**2) **0.5
+Last I told python to print(c)
 
 
 INT3
