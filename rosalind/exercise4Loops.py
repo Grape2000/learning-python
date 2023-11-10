@@ -1,3 +1,5 @@
+#sum all odd numbers between a and b (including a and b)
+
 a = 4656
 b = 9652
 result = 0
