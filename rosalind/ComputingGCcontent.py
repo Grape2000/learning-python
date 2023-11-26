@@ -76,3 +76,5 @@ print(percent)
 
 
 # sort percentage of all DNA strings -> first one is highest
+
+
