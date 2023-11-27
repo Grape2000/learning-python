@@ -51,7 +51,21 @@ for line in data:
     else: sequences[key]+=line[:-1]
 print(sequences)
 
-# count G and C with .count
-#seq = sequences.values
-#print(seq)
-#seq.count("G")
+
+# put loop into a function 
+def GCamount(DNA):
+    amount_GC = 0
+    for i in DNA:
+        if i == "G":
+            amount_GC += 1
+        elif i == "C":
+            amount_GC += 1
+        else:
+            continue
+    return amount_GC
+
+#x = len(string(sequences))
+print(amount_GC)
+# calculate percentage of GC in the DNA string    
+#percent = len(amount_GC) * 100 / len(Rosalind_0808)
+#print(percent)
