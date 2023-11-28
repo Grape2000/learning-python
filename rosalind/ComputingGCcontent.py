@@ -48,13 +48,27 @@ for line in data:
     if line[0] == ">":
         key = line[1:-1]
         sequences[key]=""
-    else: sequences[key]+=line[:-1]
+    else: 
+        sequences[key]+=line[:-1]
 print(sequences)
+
+
+### loop ### 
+#amount_GC = []
+amount_GC = 0
+for i in sequences:
+    if i == "G":
+        amount_GC += 1
+    elif i == "C":
+        amount_GC += 1
+    else:
+        continue
+print(amount_GC)
 
 
 # put loop into a function 
 def GCamount(DNA):
-    amount_GC = 0
+    #amount_GC = 0
     for i in DNA:
         if i == "G":
             amount_GC += 1
@@ -63,9 +77,16 @@ def GCamount(DNA):
         else:
             continue
     return amount_GC
+    
 
-#x = len(string(sequences))
-print(amount_GC)
+#GCvalue = (GC/len(sequences) * 100)
+#sequences.append(GCvalue)
+#print(sequences)
+
+###### works till here ######
+# go over all keys and values in the squences dict
+
+#amount_GC = GCamount()
 # calculate percentage of GC in the DNA string    
-#percent = len(amount_GC) * 100 / len(Rosalind_0808)
+# percent = GCamount *100 / len(sequences)
 #print(percent)
