@@ -30,7 +30,7 @@
 # =================================================================== #
 
 
-
+############# my attempt did not work ###########################
 ############# how to do it for more strings at the same time ########
 
 # calculate GC content for all of them and then find highest GC content
@@ -40,53 +40,68 @@
 data = open("INI5.txt", "r")
 
 
-#make a dictionary
+#make a dictionary -> this part works!
 # sequences -> result(dictionary)
-sequences = {}
+#sequences = {}
 
-for line in data:
-    if line[0] == ">":
-        key = line[1:-1]
-        sequences[key]=""
-    else: 
-        sequences[key]+=line[:-1]
-print(sequences)
+#for line in data:
+#    if line[0] == ">":
+#        key = line[1:-1]
+#        sequences[key]=""
+#    else: 
+#        sequences[key]+=line[:-1]
+#print(sequences)
 
-
-### loop ### 
-#amount_GC = []
-amount_GC = 0
-for i in sequences:
-    if i == "G":
-        amount_GC += 1
-    elif i == "C":
-        amount_GC += 1
-    else:
-        continue
-print(amount_GC)
 
 
 # put loop into a function 
-def GCamount(DNA):
+#def GCamount(DNA):
     #amount_GC = 0
-    for i in DNA:
-        if i == "G":
-            amount_GC += 1
-        elif i == "C":
-            amount_GC += 1
-        else:
-            continue
-    return amount_GC
+#    for i in DNA:
+#        if i == "G":
+#            amount_GC += 1
+#        elif i == "C":
+#            amount_GC += 1
+#        else:
+#            continue
+#    return amount_GC
     
 
 #GCvalue = (GC/len(sequences) * 100)
 #sequences.append(GCvalue)
 #print(sequences)
 
-###### works till here ######
 # go over all keys and values in the squences dict
 
 #amount_GC = GCamount()
 # calculate percentage of GC in the DNA string    
 # percent = GCamount *100 / len(sequences)
 #print(percent)
+
+
+
+############################# solution #######################
+
+#fasta = open('rosalind_test.txt', 'r').read()
+
+max_gc = 0.0
+
+with open('rosalind_gc.txt') as f:
+    content = f.readlines()
+    for i, line in enumerate(content):
+        if line.startswith('>'):
+            id = line[1:]
+            # reset sequence string
+            seq = ''
+        else:
+            newseq = line.strip()
+            seq = seq + newseq
+            # print if last substring or if next substring starts with '>'
+            if i==len(content)-1 or content[i+1].startswith('>'):
+                gc = 100 * (seq.count('G') + seq.count('C')) / len(seq)
+                if gc > max_gc:
+                    max_gc = gc
+                    max_id = id
+
+print(max_id, end='')
+print(max_gc)
