@@ -53,6 +53,24 @@ rvRNA = second_string[::-1]
 print(rvRNA)
 
 
+### make frames ####
+frame1 = fwRNA[0:]
+frame2 = fwRNA[1:]
+frame3 = fwRNA[2:]
+frame4 = rvRNA[0:]
+frame5 = rvRNA[1:]
+frame6 = rvRNA[2:]
+
+
+# split into triplets and make a list for each ORF
+
+
+# find all positions of Start (AUG) and all positions of Stop (UAG, UGA, UAA)
+range(start, stop, step)
+
+# make ORFs for all possible starts to stops
+
+
 
 # triplets in Protein codieren
 aminoacids = {
@@ -81,20 +99,27 @@ aminoacids = {
 
 
 
+
+
+
+
+
 ######## ???? #######
 
 
-protein = ""
-stop = ["UAG","UGA","UAA"]
-print(stop)
+#protein = ""
+#stop = ["UAG","UGA","UAA"]
+#print(stop)
 
-for i in range(len(fwRNA)//3):
-    codon = fwRNA[i:i+3]
-    if codon == "AUG":
-        protein = ""
-        f=fwRNA[i:]
-        start = 0     
+#for i in range(len(fwRNA)//3):
+#    codon = fwRNA[i:i+3]
+#    if codon == "AUG":
+#        protein = ""
+#        f=fwRNA[i:]
+#        start = 0     
     #translate to aminoacid
-    protein += aminoacids[codon]
-print(protein)
+#    protein += aminoacids[codon]
+#print(protein)
+
+
 
