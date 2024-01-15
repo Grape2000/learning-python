@@ -16,8 +16,8 @@
 # k = 3 ... number of offspring pairs per pair
 
 def rabbits(n, k):
-    F1 = 1    #first generation with one pair, two young to have offspring
-    F2 = 1    #second generation
+    F1 = 1    #first generation with one pair, to young to have offspring
+    F2 = 1    #second generation, one pair old enough to have babies
     Fn = 0    #calculating generation
     if n > 2:
         for number_of_Generations in range(n - 2):    #-2 = minus the first two generations
@@ -34,4 +34,21 @@ def rabbits(n, k):
     return F2
         
 print(rabbits(30, 3))
+
+
+
+
+
+
+def fib(n):
+    if n > 1:
+        return fib(n-1) + fib(n-2)
+    else:
+        return 1
+    
+#n = ["2","3","4","5","6","7","8","9","10"]   
+#for i in range(len(n)):
+#    print(fib(n))
+
+
 
